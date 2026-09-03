@@ -141,7 +141,7 @@ export function useTravelTime(
             destination: { lat: houseLat, lng: houseLng },
             travelMode: mode,
           },
-          (result, status) => {
+          (result: any, status: any) => {
             if (status === googleNamespace.maps.DirectionsStatus.OK && result && result.routes[0]?.legs[0]) {
               resolve(result.routes[0].legs[0].duration?.text || '');
             } else {
